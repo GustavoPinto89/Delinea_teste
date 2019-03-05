@@ -17,8 +17,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
    login = {
-      username: 'josefina@email.com',
-      password: 'teste123'
+      username: '',
+      password: ''
    }
    isLoading = false;
 

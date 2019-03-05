@@ -8,7 +8,7 @@
    <div class="d-flex justify-content-center">
       <div class="col-md-8 border">
          <div class="register-box">
-            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <form #f="ngForm" (ngSubmit)="onSubmit()">
                <div class="form-group">
                   <label for="name">Nome Completo<span class="red-dot"> *</span></label>
                   <input type="text" class="form-control form-control-sm" id="name" [(ngModel)]="user.name" name="name" required>
