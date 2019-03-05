@@ -17,7 +17,7 @@ export class CandidatesService {
 
 
    constructor(private http: Http) { 
-      this.url = 'https://delineaapi.herokuapp.com/candidate/';
+      this.url = environment.url;
       this.client_id = environment.client_id
       this.client_secret = environment.client_secret
    }
