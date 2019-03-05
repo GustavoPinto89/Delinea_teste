@@ -1,0 +1,59 @@
+<div class="register-title">   
+   <div class="d-flex justify-content-center">
+      <h1>Cadastro de Candidatos</h1>
+   </div>
+</div>
+<div class="register-container">
+<div class="container">
+   <div class="d-flex justify-content-center">
+      <div class="col-md-8 border">
+         <div class="register-box">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+               <div class="form-group">
+                  <label for="name">Nome Completo<span class="red-dot"> *</span></label>
+                  <input type="text" class="form-control form-control-sm" id="name" [(ngModel)]="user.name" name="name" required>
+               </div>
+               <div class="row">
+                  <div class="form-group col-md-4">
+                     <label for="cpf">CPF</label>
+                     <input type="text" class="form-control form-control-sm form-control form-control-sm-sm" id="cpf" [(ngModel)]="user.cpf" name="cpf" [textMask]="{mask: cpfMask}">
+                  </div>
+                  <div class="form-group col-md-4">
+                     <label for="rg">RG</label>
+                     <input type="text" class="form-control form-control-sm form-control form-control-sm-sm" id="rg" [(ngModel)]="user.rg" name="rg" [textMask]="{mask: rgMask}">
+                  </div>
+                  <div class="form-group col-md-4">
+                     <label for="birth-date">Data de Nascimento</label>
+                     <input type="text" class="form-control form-control-sm" id="birth" [(ngModel)]="user.birth_date" name="birth" [textMask]="{mask: dateMask}">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="birth-date">Telefone</label>
+                  <input type="text" class="form-control form-control-sm" id="phone" [(ngModel)]="user.phone" name="phone" [textMask]="{mask: phoneMask}">
+               </div>
+               <div class="form-group">
+                  <label for="birth-date">Username</label>
+                  <input type="text" class="form-control form-control-sm" id="username" [(ngModel)]="user.username" name="username">
+               </div>
+               <div class="row">
+                  <div class="form-group col-md-6">
+                     <label for="email">Email<span class="red-dot"> *</span></label>
+                     <input type="email" class="form-control form-control-sm" id="email" [(ngModel)]="user.email" name="email">
+                  </div>
+                  <div class="form-group col-md-6">
+                     <label for="text">Senha<span class="red-dot"> *</span></label>
+                     <input type="text" class="form-control form-control-sm" id="password" [(ngModel)]="user.password" name="password" required>
+                  </div>
+               </div>
+               <div class="d-flex justify-content-end">
+                  <button type="button" class="btn btn-danger btn-sm" routerLink="/">Cancelar</button>
+                  <button type="submit" class="btn btn-success btn-sm ml-2">
+                        <span class="spinner-border spinner-border-sm" role="status" *ngIf="isLoading"></span>Salvar
+                  </button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+</div>

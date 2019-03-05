@@ -1,0 +1,31 @@
+<div class="candidates-title">   
+   <div class="d-flex justify-content-center">
+      <h1>Listagem de Candidatos</h1>
+   </div>
+</div>
+
+<div class="candidates-container">
+   <div class="container">
+      <table class="table table-striped">
+         <thead>
+           <tr>
+             <th scope="col">Nome Completo</th>
+             <th scope="col">E-mail</th>
+             <th scope="col">Telefone</th>
+             <th scope="col">Funcionalidade</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let candidate of candidates">
+             <th scope="row">{{ candidate.name }}</th>
+             <td>{{ candidate.email }}</td>
+             <td>{{ candidate.phone }}</td>
+             <td *ngIf="loggedUser | async as u">
+               <i class="fa fa-edit" style="font-size: 1.5rem" (click)="updateCandidate(candidate.id)"></i>
+               <i class="fa fa-trash ml-2" style="font-size: 1.5rem" *ngIf="u.isLogged" (click)="deleteCandidate(candidate.id)"></i>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+   </div>
+</div>
