@@ -6,7 +6,7 @@
 <div class="register-container">
 <div class="container">
    <div class="d-flex justify-content-center">
-      <div class="col-md-8 border">
+      <div class="col-md-8 shadow bg-white rounded">
          <div class="register-box">
             <form #f="ngForm" (ngSubmit)="onSubmit()">
                <div class="form-group">
@@ -46,8 +46,8 @@
                   </div>
                </div>
                <div class="d-flex justify-content-end">
-                  <button type="button" class="btn btn-danger btn-sm" routerLink="/">Cancelar</button>
-                  <button type="submit" class="btn btn-success btn-sm ml-2">
+                  <button type="button" class="btn btn-outline-danger btn-sm" routerLink="/login">Cancelar</button>
+                  <button type="submit" class="btn btn-outline-success btn-sm ml-2">
                         <span class="spinner-border spinner-border-sm" role="status" *ngIf="isLoading"></span>Salvar
                   </button>
                </div>

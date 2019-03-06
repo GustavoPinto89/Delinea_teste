@@ -7,11 +7,11 @@
 <div class="login-container">
    <div class="container">
       <div class="d-flex justify-content-center">
-         <div class="col-md-4 border">
+         <div class="col-md-4 shadow bg-white rounded">
             <div class="login-box">
                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                   <div class="form-group">
-                     <label for="name">Usuário<span class="red-dot"> *</span></label>
+                     <label for="name">Usuário</label>
                      <input type="text" class="form-control form-control-sm" id="name" [(ngModel)]="login.username" name="name" required>
                   </div>
                   <div class="form-group">
@@ -19,10 +19,10 @@
                      <input type="password" class="form-control form-control-sm" id="password" name="password" [(ngModel)]="login.password">
                   </div>
                   <div class="d-flex justify-content-center">
-                     <button type="submit" class="btn btn-danger btn-sm">
+                     <button type="submit" class="btn btn-outline-danger btn-sm">
                         <span class="spinner-border spinner-border-sm" role="status" *ngIf="isLoading"></span>Login
                      </button>
-                     <button type="button" class="btn btn-success btn-sm ml-2" routerLink="/register">Cadastrar-se</button>
+                     <button type="button" class="btn btn-outline-success btn-sm ml-2" routerLink="/register">Cadastrar-se</button>
                   </div>
                </form>
             </div>

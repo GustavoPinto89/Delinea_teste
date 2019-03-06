@@ -35,7 +35,6 @@ import { UpdateComponent } from './update/update.component';
         user: reducer
       }),
       RouterModule.forRoot([
-         //{ path: '', component: HomeComponent },
          { path: 'login', component: LoginComponent },
          { path: 'candidates', component: CandidatesComponent },
          { path: 'candidate/:id', component: UpdateComponent },
