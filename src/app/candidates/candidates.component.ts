@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class CandidatesComponent implements OnInit {
 
    candidates: any;
+   isLoading: boolean;
    loggedUser: Observable<User>;
 
    constructor(private store: Store<AppState>, private service: CandidatesService, private route: Router) { 
@@ -22,12 +23,11 @@ export class CandidatesComponent implements OnInit {
    }
 
    ngOnInit() {
+      this.isLoading = true;
       this.loadCandidates();
    }
 
    deleteCandidate(id){
-
-
       let token;
       let isLogged;
       this.loggedUser.subscribe((User: User )=> {
@@ -62,6 +62,7 @@ export class CandidatesComponent implements OnInit {
       this.service.getCandidates()
          .subscribe(response => {
             this.candidates = response.json();
+            this.isLoading = false;
       }, 
       error => {
          alert('An unexpected error ocurred.');
